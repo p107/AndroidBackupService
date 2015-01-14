@@ -3,6 +3,9 @@
     package="pl.ndl.p107.android_backup_service"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -22,6 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <service
+			android:name="MyService"
+			android:label="my-servis" >
+		</service> 
+		
+        <receiver android:name=".MyBoot" android:enabled="true" android:exported="false">   
+            <intent-filter>   
+                <action android:name="android.intent.action.BOOT_COMPLETED" />   
+            </intent-filter>   
+        </receiver> 
+        
     </application>
 
 </manifest>

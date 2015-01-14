@@ -1,19 +1,32 @@
 package pl.ndl.p107.android_backup_service;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
 
+	Button b1;
+	MainActivity mainActivity = this;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
         //test
+        b1 = (Button) findViewById(R.id.btn_run_service);
+		View.OnClickListener myhandler1 = new View.OnClickListener() {
+			public void onClick(View v) {
+				startService(new Intent(mainActivity, MyService.class));
+			}
+		};
+		b1.setOnClickListener(myhandler1);
         
     }
 

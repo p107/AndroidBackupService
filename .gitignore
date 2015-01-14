@@ -1,0 +1,14 @@
+/android_backup_service/gen
+/android_backup_service/bin
+
+*.apk
+*.ap_
+
+*.dex
+
+*.class
+
+local.properties
+
+/android_backup_service/.project
+/android_backup_service/.classpath

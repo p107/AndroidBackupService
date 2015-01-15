@@ -20,7 +20,7 @@ public class DebugFileSaveHelper {
         File myDir = new File(root + "/abs");    
         myDir.mkdirs();
         
-        String fname = "abs_1.txt";
+        String fname = "abs_3.txt";
         File file = new File (myDir, fname);
         
         
@@ -31,16 +31,21 @@ public class DebugFileSaveHelper {
         File path1 = Environment.getDataDirectory();
         File path2 = Environment.getExternalStorageDirectory();
         
+        //-- to do wywalenia
         File files[] = path2.listFiles();
         StringBuilder f = new StringBuilder();
         for (int i=0; i < files.length; i++) {
         	f.append(((files[i].isDirectory())?"<dir> ":"") + files[i].getName() + "\n");
         }
+        //-----
+        
+        FileListHelper filesList = new FileListHelper(true);
+        String fileListRaport = filesList.filesList(path2.getPath());
         
         try {
                FileOutputStream out = new FileOutputStream(file);
                OutputStreamWriter osw = new OutputStreamWriter(out);
-               osw.write("service - testowa tresc " + reportDate + "\nPATH DATA: " + path1 + "\nEXT: " + path2 + "\n\n" + f.toString() + "\n\n");
+               osw.write("service - testowa tresc " + reportDate + "\nPATH DATA: " + path1 + "\nEXT: " + path2 + "\n\n" + fileListRaport /*f.toString()*/ + "\n\n");
                osw.flush();
                osw.close();
 

@@ -1,4 +1,4 @@
-package pl.ndl.p107.android_backup_service;
+package pl.ndl.p107.a_backup_service;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -30,14 +30,18 @@ public class DebugFileSaveHelper {
      	
         File path1 = Environment.getDataDirectory();
         File path2 = Environment.getExternalStorageDirectory();
+        File path3 = new File("/storage");
+        
+        //  
+        //  /storage/extSdCard
         
         FileListHelper filesList = new FileListHelper(true);
-        String fileListRaport = filesList.filesList(path2.getPath());
+        String fileListRaport = filesList.filesList(path3.getPath());
         
         try {
                FileOutputStream out = new FileOutputStream(file);
                OutputStreamWriter osw = new OutputStreamWriter(out);
-               osw.write("service - testowa tresc " + reportDate + "\nPATH DATA: " + path1 + "\nEXT: " + path2 + "\n\n" + fileListRaport /*f.toString()*/ + "\n\n");
+               osw.write("service - testowa tresc " + reportDate + "\nPATH DATA: " + path1 + "\nEXT: " + path2 + "\nSTORAGE: " + path3 + "\n\n" + fileListRaport /*f.toString()*/ + "\n\n");
                osw.flush();
                osw.close();
 

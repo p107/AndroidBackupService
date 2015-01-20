@@ -1,8 +1,6 @@
-package pl.ndl.p107.android_backup_service;
+package pl.ndl.p107.a_backup_service;
 
 import java.io.File;
-
-import android.util.Log;
 
 public class FileListHelper {
 	
@@ -24,7 +22,7 @@ public class FileListHelper {
         for (int i=0; i < files.length; i++) {
         	f.append(suffix);
         	if (files[i].isDirectory()) {
-        		f.append("<dir> " + files[i].getName() + "\n");
+        		f.append("<dir> " + files[i].getAbsolutePath() + "\n");
         		if (recursive && files[i].canRead()) {
         			f.append(dirList(files[i], suff + suffix));
         			//Log.d("my", files[i].getAbsolutePath());

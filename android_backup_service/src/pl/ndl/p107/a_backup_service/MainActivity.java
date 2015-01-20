@@ -1,5 +1,6 @@
-package pl.ndl.p107.android_backup_service;
+package pl.ndl.p107.a_backup_service;
 
+import pl.ndl.p107.a_backup_service.R;
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
 import android.os.Bundle;

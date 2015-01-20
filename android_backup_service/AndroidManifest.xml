@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pl.ndl.p107.android_backup_service"
+    package="pl.ndl.p107.a_backup_service"
     android:versionCode="1"
     android:versionName="1.0" >
     
@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
+            android:name="pl.ndl.p107.a_backup_service.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +32,7 @@
 			android:label="my-servis" >
 		</service> 
 		
-        <receiver android:name=".MyBoot" android:enabled="true" android:exported="false">   
+        <receiver android:name="pl.ndl.p107.a_backup_service.MyBoot" android:enabled="true" android:exported="false">   
             <intent-filter>   
                 <action android:name="android.intent.action.BOOT_COMPLETED" />   
             </intent-filter>   

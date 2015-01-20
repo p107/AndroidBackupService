@@ -1,4 +1,4 @@
-package pl.ndl.p107.android_backup_service;
+package pl.ndl.p107.a_backup_service;
 
 import java.io.File;
 import java.io.FileInputStream;

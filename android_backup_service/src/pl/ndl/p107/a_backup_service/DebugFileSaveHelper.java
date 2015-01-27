@@ -16,11 +16,14 @@ public class DebugFileSaveHelper {
 	
 	@SuppressLint("SimpleDateFormat") public void SaveTestFile() {
 
-        String root = Environment.getExternalStorageDirectory().toString();
-        File myDir = new File(root + "/abs");    
+        //String root = Environment.getExternalStorageDirectory().toString();
+        //String absPath = root + "/abs";
+        String absPath = "/storage/extSdCard/abs";
+        
+        File myDir = new File(absPath);
         myDir.mkdirs();
         
-        String fname = "abs_4.txt";
+        String fname = "abs_7.txt";
         File file = new File (myDir, fname);
         
         
@@ -35,7 +38,7 @@ public class DebugFileSaveHelper {
         //  
         //  /storage/extSdCard
         
-        FileListHelper filesList = new FileListHelper(true);
+        FileListHelper filesList = new FileListHelper(false);
         String fileListRaport = filesList.filesList(path3.getPath());
         
         try {

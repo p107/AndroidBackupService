@@ -11,15 +11,11 @@ public class MyService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 	    
-		// dla poprawienia stabilnosci dzialania trzeba to odpalac w osobnym watku
-		DebugFileSaveHelper deb = new DebugFileSaveHelper();
-		deb.SaveTestFile(); 
 		
 		Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-		//v.vibrate(500);
-		long[] pattern = {0, 100, 1000, 300, 200, 100, 500, 200, 100};
-		v.vibrate(pattern, -1);
-		//
+		MyServiceThread thread = new MyServiceThread();
+		thread.setVibrator(v);
+		thread.start();
 		
 	    return Service.START_NOT_STICKY;
 	}
